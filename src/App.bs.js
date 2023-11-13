@@ -24,42 +24,63 @@ function App(props) {
                     clearInterval(timer);
                   });
         }), []);
+  var match$1 = state.currentPhase;
   return JsxRuntime.jsxs("div", {
               children: [
-                JsxRuntime.jsx(Header.make, {
-                      seconds: state.seconds,
-                      dispatch: dispatch,
-                      currentPhase: state.currentPhase
+                JsxRuntime.jsx("h1", {
+                      children: "Pomodoro Timer",
+                      className: "text-5xl font-body"
                     }),
-                JsxRuntime.jsx(Timer.make, {
-                      seconds: state.seconds
-                    }),
-                JsxRuntime.jsx(Actions.make, {
-                      dispatch: dispatch,
-                      isTicking: state.isTicking
-                    }),
-                JsxRuntime.jsx(Editor.make, {
-                      phase: "work",
-                      value: state.workTime,
-                      onChange: (function (e) {
-                          Curry._1(dispatch, /* SetTime */{
-                                _0: /* Work */0,
-                                _1: e
-                              });
-                        })
-                    }),
-                JsxRuntime.jsx(Editor.make, {
-                      phase: "play",
-                      value: state.playTime,
-                      onChange: (function (e) {
-                          Curry._1(dispatch, /* SetTime */{
-                                _0: /* Play */1,
-                                _1: e
-                              });
-                        })
+                JsxRuntime.jsxs("div", {
+                      children: [
+                        JsxRuntime.jsxs("div", {
+                              children: [
+                                JsxRuntime.jsx(Header.make, {
+                                      seconds: state.seconds,
+                                      dispatch: dispatch,
+                                      currentPhase: state.currentPhase
+                                    }),
+                                JsxRuntime.jsx(Timer.make, {
+                                      seconds: state.seconds,
+                                      maxTime: match$1 ? Math.imul(state.playTime, 60) : Math.imul(state.workTime, 60)
+                                    }),
+                                JsxRuntime.jsx(Actions.make, {
+                                      dispatch: dispatch,
+                                      isTicking: state.isTicking
+                                    })
+                              ],
+                              className: "flex flex-col items-center gap-6"
+                            }),
+                        JsxRuntime.jsxs("div", {
+                              children: [
+                                JsxRuntime.jsx(Editor.make, {
+                                      phase: "Work",
+                                      value: state.workTime,
+                                      onChange: (function (e) {
+                                          Curry._1(dispatch, /* SetTime */{
+                                                _0: /* Work */0,
+                                                _1: e
+                                              });
+                                        })
+                                    }),
+                                JsxRuntime.jsx(Editor.make, {
+                                      phase: "Break",
+                                      value: state.playTime,
+                                      onChange: (function (e) {
+                                          Curry._1(dispatch, /* SetTime */{
+                                                _0: /* Play */1,
+                                                _1: e
+                                              });
+                                        })
+                                    })
+                              ],
+                              className: "flex flex-col justify-center gap-6"
+                            })
+                      ],
+                      className: "flex justify-center gap-10"
                     })
               ],
-              className: "flex flex-col items-center justify-center h-screen bg-gray-100"
+              className: "flex flex-col gap-5 py-12 px-40 mx-28 my-14 items-center justify-center bg-red-200 rounded-2xl shadow-lg"
             });
 }
 

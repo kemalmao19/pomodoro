@@ -14,7 +14,7 @@ let make = (~seconds, ~dispatch, ~currentPhase) => {
         )
 
     <h1 
-    className="text-xl cursor-pointer" 
+    className="text-3xl font-body cursor-pointer text-red-600" 
     onClick={seconds == 0 ? _=>dispatch(TogglePhase) : (_=>()) }
     >{label->React.string}</h1> 
 }

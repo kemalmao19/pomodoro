@@ -21,7 +21,7 @@ let initialState = {
     isTicking: false,
     workTime: 25,
     playTime: 5,
-    currentPhase: Work
+    currentPhase: Play
 }
 
 let reducer = (state, action) => switch (action) {

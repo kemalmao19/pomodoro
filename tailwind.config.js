@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{bs.js, jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ['Montserrat']
+      }
+    },
   },
   plugins: [
    
