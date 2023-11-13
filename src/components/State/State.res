@@ -21,22 +21,22 @@ let initialState = {
     isTicking: false,
     workTime: 25,
     playTime: 5,
-    currentPhase: Play
+    currentPhase: Work
 }
 
-let reducer = (state, action) => switch (action) {
+let reducer = (state, action) => switch action {
     | Start => {...state, isTicking: true}
     | Stop => {...state, isTicking: false}
     | Tick => state.isTicking && state.seconds > 0 ? {...state, seconds: state.seconds - 1} : state
-    | Reset => switch (state.currentPhase) {
+    | Reset => switch state.currentPhase {
         | Work => {...state, seconds: state.workTime * 60}
         | Play => {...state, seconds: state.playTime * 60}
         }
-    | SetTime(p, i) => switch (p) {
+    | SetTime(p, i) => switch p {
         | Work => {...state, workTime: i}
         | Play => {...state, playTime: i}
         }
-    | TogglePhase => switch (state.currentPhase) {
+    | TogglePhase => switch state.currentPhase {
         | Work => {
             ...state,
             seconds: state.playTime * 60,
