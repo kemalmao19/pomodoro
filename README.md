@@ -1,7 +1,7 @@
 # Pomodoro App
 
 A simple Pomodoro timer app built with ReScript.
-![rescript]("https://github.com/kemalmao19/pomodoro/blob/main/images/screenshot.png?raw=true")
+![rescript](https://github.com/kemalmao19/pomodoro/blob/main/images/screenshot.png?raw=true)
 
 
 ## Features
