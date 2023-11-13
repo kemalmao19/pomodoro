@@ -1,10 +1,30 @@
-# Pomodoro APP with Rescript
+# Pomodoro App
 
-install Dependencies
+A simple Pomodoro timer app built with ReScript.
+![rescript]("https://github.com/kemalmao19/pomodoro/images/screenshot.png")
+
+
+## Features
+
+* Start/stop the timer
+* Set the work and break durations
+* View the remaining time in the current session
+* Track your progress with a history of completed sessions
+
+## Installation and Usage
+
+To install the Pomodoro app, follow these steps:
+
+1. Clone this repository
+```git clone https://github.com/kemalmao19/pomodoro.git```
+
+2. install Dependencies
 ```npm install```
 
-run rescript compiler
+3. run rescript compiler
 ```npm run res:dev```
 
-run vite
+4. run vite
 ```npm run dev```
+
+## Thanks
