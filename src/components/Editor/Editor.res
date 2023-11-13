@@ -2,12 +2,13 @@ open Utils
 
 @react.component
 let make = (~phase, ~value, ~onChange) => {
-    <div>
+    <div className="flex flex-col items-center">
         <span>{toStr(phase)}</span>
         <input 
+            className="text-xl text-center"
             type_="number" 
             value={value->string_of_int} 
-            // onChange={e => e -> ReactReact.Form.target##value->onChange}
+            onChange={event => ReactEvent.Form.target(event)["value"]->onChange}
         />
     </div>
 }

@@ -17,7 +17,7 @@ type action =
     | SetTime(phase,int)
 
 let initialState = {
-    seconds: 30,
+    seconds: 0,
     isTicking: false,
     workTime: 25,
     playTime: 5,

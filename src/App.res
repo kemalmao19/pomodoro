@@ -1,3 +1,4 @@
+%%raw(`import './styles/App.css';`)
 open State
 
 @react.component
@@ -9,13 +10,12 @@ let make = () => {
         Some(()=>Js.Global.clearInterval(timer))
     })
 
-    <div>
-        <button onClick={_=>dispatch(TogglePhase)}>{"Switch timer"->React.string}</button>
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <Header seconds={state.seconds} dispatch currentPhase={state.currentPhase}/>
         <Timer seconds={state.seconds}/>
-        <button onClick={_=>dispatch(Start)}>{"Start"->React.string}</button>
-        <button onClick={_=>dispatch(Stop)}>{"Stop"->React.string}</button>
-        <button onClick={_=>dispatch(Reset)}>{"Reset"->React.string}</button>
+        <Actions dispatch isTicking={state.isTicking}/>
         <Editor phase="work" value={state.workTime} onChange={e => dispatch(SetTime(Work, e))} />
         <Editor phase="play" value={state.playTime} onChange={e => dispatch(SetTime(Play, e))} />
+
     </div>
 }

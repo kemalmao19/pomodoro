@@ -1,4 +1,6 @@
-# Rescript-Vite Boilerplate
+# Pomodoro APP with Rescript
+
+install Dependencies
 ```npm install```
 
 run rescript compiler
