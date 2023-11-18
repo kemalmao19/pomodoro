@@ -29,7 +29,7 @@ function App(props) {
               children: [
                 JsxRuntime.jsx("h1", {
                       children: "Pomodoro Timer",
-                      className: "text-5xl font-body"
+                      className: "text-3xl lg:text-5xl font-body"
                     }),
                 JsxRuntime.jsxs("div", {
                       children: [
@@ -77,10 +77,10 @@ function App(props) {
                               className: "flex flex-col justify-center gap-6"
                             })
                       ],
-                      className: "flex justify-center gap-10"
+                      className: "flex flex-col lg:flex-row justify-center gap-10"
                     })
               ],
-              className: "flex flex-col gap-5 py-12 px-40 mx-28 my-14 items-center justify-center bg-red-200 rounded-2xl shadow-lg"
+              className: "flex flex-col gap-5 p-8 lg:py-12 lg:px-40 lg:mx-28 lg:my-14 items-center justify-center bg-red-200 rounded-2xl shadow-lg"
             });
 }
 

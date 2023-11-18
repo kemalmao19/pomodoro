@@ -8,8 +8,8 @@ A simple Pomodoro timer app built with ReScript.
 
 * Start/stop the timer
 * Set the work and break durations
-* View the remaining time in the current session
-* Track your progress with a history of completed sessions
+* View the remaining time in the current session // progress
+* Track your progress with a history of completed sessions // progress
 
 ## Installation and Usage
 
